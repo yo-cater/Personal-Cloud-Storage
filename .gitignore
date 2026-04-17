@@ -1,0 +1,30 @@
+# --- .NET / C# ---
+bin/
+obj/
+*.user
+*.userosscache
+*.sln.docstates
+# IMPORTANT: Protect your secrets
+BackEnd/BackEnd.C#/appsettings.json
+BackEnd/BackEnd.C#/appsettings.Development.json
+
+# --- React / Frontend ---
+node_modules/
+dist/
+dist-ssr/
+*.local
+# If you use .env files for Vite
+FrontEnd/.env
+FrontEnd/.env.local
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+
+[Bb]in/
+[Oo]bj/
+appsettings.json
+
+appsettings.Development.json
+BackEnd/BackEnd.C#/bin/Debug/net10.0/appsettings.json:10
+BackEnd/BackEnd.C#/bin/Debug/net10.0/appsettings.json
