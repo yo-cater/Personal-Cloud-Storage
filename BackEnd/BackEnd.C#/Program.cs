@@ -16,7 +16,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:5173")
+        policy.WithOrigins("http:the-cloud-storage.vercel.app")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });

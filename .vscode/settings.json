@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/16e51310-280d-449e-9c5f-84d4b1829bba/resourceGroups/Cloud-journey/providers/Microsoft.Web/sites/the-cloud-storage",
+    "appService.deploySubpath": "BackEnd\\BackEnd.C#"
+}

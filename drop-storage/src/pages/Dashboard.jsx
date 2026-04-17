@@ -35,7 +35,7 @@ export default function Dashboard() {
     if (!session) return;
 
     try {
-      const response = await fetch("http://localhost:5200/api/files", {
+      const response = await fetch("https://the-cloud-storage.azurewebsites.net/api/files", {
         headers: { "Authorization": `Bearer ${session.access_token}` }
       });
       const data = await response.json();
@@ -63,7 +63,7 @@ export default function Dashboard() {
     setUploadQueue(prev => [...prev, { name: selectedFile.name, progress: 0 }]);
 
     try {
-      const initRes = await fetch("http://localhost:5200/api/upload/initiate", {
+      const initRes = await fetch("https://the-cloud-storage.azurewebsites.net/api/upload/initiate", {
         method: "POST",
         headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
         body: JSON.stringify({ fileName: selectedFile.name, fileSizeBytes: selectedFile.size, fileType: selectedFile.type })
@@ -99,7 +99,7 @@ export default function Dashboard() {
         xhr.send(selectedFile);
       });
 
-      await fetch("http://localhost:5200/api/upload/complete", {
+      await fetch("https://the-cloud-storage.azurewebsites.net/api/upload/complete", {
         method: "POST",
         headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
         body: JSON.stringify({ blobPath, fileName: selectedFile.name, fileSizeBytes: selectedFile.size })
@@ -193,7 +193,7 @@ export default function Dashboard() {
         return;
       }
 
-      const response = await fetch(`http://localhost:5200/api/files/download/${fileId}`, {
+      const response = await fetch(`https://the-cloud-storage.azurewebsites.net/api/files/download/${fileId}`, {
         headers: { "Authorization": `Bearer ${session.access_token}` }
       });
       
@@ -222,7 +222,7 @@ export default function Dashboard() {
         return;
       }
 
-      const response = await fetch(`http://localhost:5200/api/files/${fileId}`, {
+      const response = await fetch(`https://the-cloud-storage.azurewebsites.net/api/files/${fileId}`, {
         method: "DELETE",
         headers: { "Authorization": `Bearer ${session.access_token}` }
       });
